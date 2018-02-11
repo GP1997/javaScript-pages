@@ -1,0 +1,120 @@
+<html>
+<body>
+	<style>
+	body{
+		background-color:#000;
+	}
+	#name,#in,#password,#email,#age{
+		width:350px;
+		height: 50px;
+		background:#17FFB2;
+		border:5px;
+		border-radius: 50px;
+		padding-left:10px;
+
+	}
+	#su{
+		width:100px;
+        height: 25px;
+		background-color:#133EFF;
+		border:5px;
+		border-radius:25px;
+		color:white;
+	}
+	#suu{
+		width:100px;
+		height: 25px;
+		background-color:#FF1010;
+		border:5px;
+		border-radius:25px;
+	color:white;
+	}	
+	</style>
+<script>  
+                       function validateform1(){  
+                      var name=document.getElementById("name").value;
+                      if(name==="")
+                {
+                    document.getElementById("a").innerHTML="Enter a value";
+                    document.getElementById("a").style.color="white";
+                    
+                }
+                else if(name.length<3)
+                {
+                    document.getElementById("a").innerHTML="Username should contain minimum 3 characters";
+                    document.getElementById("a").style.color="white";
+                }
+                else
+                {
+                    document.getElementById("a").innerHTML="";
+                }
+            return true;
+        }
+               function validateform2(){
+                   var password=document.getElementById("password").value;
+                	if(password.length<6)
+                {
+                	document.getElementById("b").innerHTML="Password should contain minimum 6 characters/alphabets";
+                	document.getElementById("b").style.color="white";
+                }
+                else
+                {
+                    document.getElementById("b").innerHTML="";
+                }
+                return true;
+
+                }
+                function validateform3(){
+                var email=document.getElementById("email").value;
+                	if(email.indexOf("@")>-1&&email.indexOf(".")>-1)
+                {
+                	document.getElementById("c").innerHTML="";
+                }
+                else
+                {
+                document.getElementById("c").innerHTML="Please enter correct mail id";	
+                document.getElementById("c").style.color="white";
+                }
+                return true;
+
+                }
+                function validateform4(){
+                 var age=document.getElementById("age").value;
+           	    if(age>=10&&age<90){
+           	    document.getElementById("d").innerHTML="";
+                }
+                else
+            	{
+            		document.getElementById("d").innerHTML="Age should be between 10 and 90";	
+                document.getElementById("d").style.color="white";
+            }
+            return true;
+
+        }
+        function valid()
+        {
+        	var name=document.getElementById("name").value;
+        	var password=document.getElementById("password").value;
+        	var email=document.getElementById("email").value;
+            var age=document.getElementById("age").value;
+        	if(name===""||password===""||email===""||age===""){
+
+alert("Please fill the data correctly");
+}
+else
+{
+      alert("Success,You have entered data correctly");
+  }
+}
+</script>  
+<body> <br>
+<br><br><br><br> 
+<form align="center">  
+<span style="font-weight:bold;color:#ffffff">Username:</span> <input id="name" onblur="validateform1()" type="text"> <div id="a"> </div><br><br>  
+<span style="font-weight:bold;color:#ffffff">Password:</span> &nbsp;<input id="password" onblur="validateform2()" type="password"> <div id="b"></div><br><br>
+<span style="font-weight:bold;color:#ffffff">Email:</span> &emsp;&nbsp;&nbsp;<input id="email" onblur="validateform3()" type="Email"> <div id="c"></div><br><br>
+<span style="font-weight:bold;color:#ffffff">Age:</span> &emsp;&emsp;&nbsp;<input  id="age" onblur="validateform4()" type="Age"> <div id="d"></div><br><br>
+<input id="su" type="submit" value="Submit" onclick="valid()">&emsp;&nbsp;<input id="suu" type="reset" name="reset"> 
+</form>  
+</body>
+</html>
